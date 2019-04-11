@@ -30,6 +30,7 @@ function leftHandDown(elf) {
 function rightHandUp(elf) {
   return new Promise((resolve) => {
     setTimeout(() => {
+      elf.stance = [0, 1, 0, 0];
       resolve(elf);
     }, elf.danceSpeed);
   });
@@ -38,17 +39,56 @@ function rightHandUp(elf) {
 function rightHandDown(elf) {
   return new Promise((resolve) => {
     setTimeout(() => {
+      elf.stance = [0, 0, 0, 0];
       resolve(elf);
     }, elf.danceSpeed);
   });
 }
 
+function leftLegApart(elf) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      elf.stance = [0, 0, 1, 0];
+      resolve(elf);
+    }, elf.danceSpeed);
+  });
+}
+
+function leftLegGather(elf) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      elf.stance = [0, 0, 0, 0];
+      resolve(elf);
+    }, elf.danceSpeed);
+  });
+}
+
+function rightLegApart(elf) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      elf.stance = [0, 0, 0, 1];
+      resolve(elf);
+    }, elf.danceSpeed);
+  });
+}
+
+function rightLegGather(elf) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      elf.stance = [0, 0, 0, 0];
+      resolve(elf);
+    }, elf.danceSpeed);
+  });
+}
 
 // Эта функция принимает в качестве аргумента эльфа и драгоценность, которая
 // сейчас демонстрируется всем эльфам. Здесь нужно дать команду эльфу выполнить
 // какую-то фигуру или команду и вернуть Promise
 function displayGemToElf(elf, gem) {
-  return leftHandUp(elf).then(leftHandDown);
+  if (gem == allGems[24]) {
+    return leftHandUp(elf).then(leftHandDown);
+  } 
+  return leftHandUp(elf).then(rightHandUp);
 }
 
 

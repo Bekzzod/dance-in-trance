@@ -10,6 +10,19 @@ describe("Эльф должен делать простые движения", f
 			done();
 		})
 	});
+	
+	it("опустить левую руку", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [1, 0, 0, 0],
+		}
+
+		leftHandDown(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 0, 0]);
+			done();
+		})
+	});
+
 
 	it("поднять правую руку", function(done) {
 		let elf = {
@@ -19,6 +32,66 @@ describe("Эльф должен делать простые движения", f
 
 		rightHandUp(elf).then((elf) => {
 			expect(elf.stance).toEqual([0, 1, 0, 0]);
+			done();
+		})
+	});
+
+	it("опустить правую руку", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [0, 1, 0, 0],
+		}
+
+		rightHandDown(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 0, 0]);
+			done();
+		})
+	});
+
+	it("выставить левую ногу", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [0, 0, 0, 0],
+		}
+
+		leftLegApart(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 1, 0]);
+			done();
+		})
+	});
+
+	it("собрать левую ногу", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [0, 0, 0, 0],
+		}
+
+		leftLegGather(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 0, 0]);
+			done();
+		})
+	});
+
+	it("выставить правую ногу", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [0, 0, 0, 0],
+		}
+
+		rightLegApart(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 0, 1]);
+			done();
+		})
+	});
+
+	it("собрать правую ногу", function(done) {
+		let elf = {
+			danceSpeed: 10,
+			stance: [0, 0, 0, 0],
+		}
+
+		rightLegGather(elf).then((elf) => {
+			expect(elf.stance).toEqual([0, 0, 0, 0]);
 			done();
 		})
 	});
