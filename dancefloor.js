@@ -10,7 +10,7 @@ let dance = [
   [3000, allGems[2]],
   [200, allGems[3]],
   [200, allGems[4]],
-  [200, allGems[24]]
+  [200, allGems[22]]
 ];
 
 // Это ваша танцевальная группа
@@ -67,8 +67,8 @@ let elves = [{
   head: '(._.)',
   danceSpeed: 200,
   stance: [0, 0, 0, 0],
-  favouriteGems: [allGems[1]],
-  dislikedGems: [allGems[0]]
+  favouriteGems: [allGems[0]],
+  dislikedGems: [allGems[1]]
 }];
 
 // Эта функция должна вернуть список эльфов для отрисовки
