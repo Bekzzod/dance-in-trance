@@ -1,16 +1,16 @@
 // Это ваш танец: через какой промежуток времени показать какую драгоценность
 let dance = [
+  [200, allGems[18]],
+  [200, allGems[19]],
+  [200, allGems[23]],
+  [200, allGems[24]],
+  [200, allGems[22]],
+  [200, allGems[20]],
+  [200, allGems[21]],
+/*  [3000, allGems[1]],
   [200, allGems[0]],
   [200, allGems[1]],
-  [200, allGems[2]],
-  [200, allGems[3]],
-  [200, allGems[4]],
-  [200, allGems[0]],
-  [200, allGems[1]],
-  [3000, allGems[2]],
-  [200, allGems[3]],
-  [200, allGems[4]],
-  [200, allGems[22]]
+  [200, allGems[0]]*/
 ];
 
 // Это ваша танцевальная группа
